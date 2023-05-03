@@ -1,0 +1,40 @@
+<div class="container p-5">
+    
+    <div class="first">
+        
+        <div [ngStyle]="{'width.%':width}" class="second ">
+    
+        </div>
+        
+    </div>
+    
+    <div class=" d-flex flex-column justify-content-center align-items-center p-5">
+        <form [formGroup]="product" class="needs-validation stepper-form">
+
+            <div *ngIf="step==1" class=" mb-3 p-2 f1 border">
+                <h4>Add Product</h4><br>
+                <input type="text" placeholder="Enter Product Name" formControlName="pname" /><br><br>
+                <input type="text" placeholder="Enter Product Price " formControlName="pprice" /><br> <br>
+                <button class="btn btn-info text-right " (click)="goToSecondForm()" >Next</button>
+            </div>
+            <div formGroupName="supplier">
+                <div *ngIf="step==2" class="f1 h-100 w-100 border mb-3 p-4">
+                    <h4> Supplier Information</h4><br>
+                    <input type="text" formControlName="sname" placeholder="Enter Supplier Name" /><br><br>
+                    <input type="text" formControlName="contact" placeholder="Enter Contact Number" /><br><br>
+                    <button (click)="goBack()" class="btn btn-info text-right btn-prev" >Back</button>&nbsp;&nbsp;
+                    <button (click)="goToThirdForm()" class="btn btn-info text-right btn-next">Next</button>
+                </div>
+                <div *ngIf="step==3" formGroupName="payment" class="f1 h-100 w-100 border mb-3 p-4">
+                    <h4> Payment Details</h4><br>
+
+                    <input type="text" formControlName="bankName" placeholder="Enter Bank Name" /><br><br>
+                    <input type="text" placeholder="Enter ammount" formControlName="ammount" /><br><br>
+                    <button (click)="goBack()" class="btn btn-info text-right">Back</button>&nbsp;&nbsp;
+                    <button (click)="save()" class="btn btn-success text-right">Save</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
