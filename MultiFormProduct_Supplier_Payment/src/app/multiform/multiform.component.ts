@@ -60,7 +60,7 @@ export class MultiformComponent {
     this.cs.postMultiFormData(this.product.value).subscribe();
     this.product.reset()
     this.width=this.width+33;
-    // window.location.reload();
+    window.location.reload();
   }
   
 }
