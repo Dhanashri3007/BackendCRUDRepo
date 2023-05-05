@@ -1,5 +1,6 @@
 package com.demo.serviceIMPL;
 
+import java.util.List;
 import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,6 +61,11 @@ public class HomeServiceIMPL implements HomeServiceI {
 		}
 		
 	
+	}
+
+	@Override
+	public List<UserLogin> findAll() {
+		return hr.findAll();
 	}
 
 }
